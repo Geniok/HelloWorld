@@ -1,8 +1,16 @@
-[![Build status][s1]][av]
-[![DownloadHelloWorld]][do64] [![DownloadHelloWorld32]][do32]<br/>
+[![Build status][s1]][av] [![License: MIT][s3]][li]
+[![DownloadHelloWorld][s4]][do64] [![DownloadHelloWorld32][s5]][do32] <br/>
 
 [s1]: https://ci.appveyor.com/api/projects/status/m044mj50v48tu1os?svg=true
+[s3]: https://img.shields.io/badge/License-MIT-orange.svg
+[s4]: https://img.shields.io/badge/download%20editor-64bit-blue.svg
+[s5]: https://img.shields.io/badge/download%20editor-32bit-blue.svg
+[s6]: https://img.shields.io/badge/download%20tests-64bit-blue.svg
+[s7]: https://img.shields.io/badge/download%20tests-32bit-blue.svg
+
 [av]: https://ci.appveyor.com/project/Geniok/helloworld
+[li]: https://opensource.org/licenses/MIT
+
 [do64]: https://ci.appveyor.com/api/projects/Geniok/helloworld/artifacts/helloworld.zip?branch=master&job=Platform%3A%20x64
 [do32]: https://ci.appveyor.com/api/projects/Geniok/helloworld/artifacts/helloworld.zip?branch=master&job=Platform%3A%20Win32
 
