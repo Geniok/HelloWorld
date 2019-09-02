@@ -3,10 +3,8 @@
 
 [s1]: https://ci.appveyor.com/api/projects/status/m044mj50v48tu1os?svg=true
 [s3]: https://img.shields.io/badge/License-MIT-orange.svg
-[s4]: https://img.shields.io/badge/download%20editor-64bit-blue.svg
-[s5]: https://img.shields.io/badge/download%20editor-32bit-blue.svg
-[s6]: https://img.shields.io/badge/download%20tests-64bit-blue.svg
-[s7]: https://img.shields.io/badge/download%20tests-32bit-blue.svg
+[s4]: https://img.shields.io/badge/download%20helloWorld-64bit-blue.svg
+[s5]: https://img.shields.io/badge/download%20helloWorld-32bit-blue.svg
 
 [av]: https://ci.appveyor.com/project/Geniok/helloworld
 [li]: https://opensource.org/licenses/MIT
