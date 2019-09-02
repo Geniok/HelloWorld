@@ -35,10 +35,10 @@ matrix:
     - platform: x64
       configuration: Release
 
-# exclude configuration from the matrix. Works similarly to 'allow_failures' but build not even being started for excluded combination.
-exclude:
-  - platform: x86
-    configuration: Debug
+  # exclude configuration from the matrix. Works similarly to 'allow_failures' but build not even being started for excluded combination.
+  exclude:
+    - platform: x86
+      configuration: Debug
 
 #---------------------------------#
 #       build configuration       #
