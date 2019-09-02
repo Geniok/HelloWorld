@@ -30,12 +30,12 @@ platform:
 #  name: HelloWorld
 
 #after_build:
-#  - cmd: move %APPVEYOR_BUILD_FOLDER%\%PLATFORM%\Release\HelloWorld.exe %APPVEYOR_BUILD_FOLDER%\HelloWorld
-#  - cmd: 7z a HelloWorld.zip HelloWorld\HelloWorld.exe
+  - cmd: move %APPVEYOR_BUILD_FOLDER%\%PLATFORM%\Release\HelloWorld.exe %APPVEYOR_BUILD_FOLDER%\HelloWorld
+  - cmd: 7z a HelloWorld.zip HelloWorld\HelloWorld.exe
 artifacts:
     # файлы-артефакты нужно предварительно явно указать в данной секции
     # в терминологии AppVeyor это называется "push artifacts"
-    - path: HelloWorld.exe
+    - path: HelloWorld\HelloWorld.exe
 
 deploy:
     # выкладываем tagged-коммиты на GitHub Releases:
