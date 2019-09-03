@@ -9,8 +9,8 @@
 [av]: https://ci.appveyor.com/project/Geniok/helloworld/branch/master
 [li]: https://opensource.org/licenses/MIT
 
-[do64]: https://ci.appveyor.com/api/projects/Geniok/helloworld/artifacts/helloworld.zip?branch=master&job=Platform%3A%20x64
-[do32]: https://ci.appveyor.com/api/projects/Geniok/helloworld/artifacts/helloworld.zip?branch=master&job=Platform%3A%20Win32
+[do64]: https://ci.appveyor.com/api/project/Geniok/helloworld/artifacts/helloworld.zip?branch=master&job=Platform%3A%20x64
+[do32]: https://ci.appveyor.com/api/project/Geniok/helloworld/artifacts/helloworld.zip?branch=master&job=Platform%3A%20x86
 
 # HelloWord
 тестовый репозиторий для проверки AppVeyor
