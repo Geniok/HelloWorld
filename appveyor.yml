@@ -27,6 +27,10 @@ artifacts:
     - path: HelloWorld_%PLATFORM%.zip
       name: HelloWorld_%PLATFORM%
 
+artifacts: # push all files in directory
+  path: %APPVEYOR_BUILD_FOLDER%\%PLATFORM%\Release\*.exe
+  name: installer
+
 deploy:
   on:
     branch: master                 # релизы только из ветки master
@@ -38,7 +42,8 @@ deploy:
   auth_token:
     secure: /j11FkWAb7Eqt5/aJAAV0JiviX97gHHBf9tUFSV9qQLfPD1amrfpGSDhcPngtkB5 # токен, зашифрованный на сайте appveyor.ci
 
-  artifact: /.*\.zip/ # регулярное выражение, описывающее все артефакты данного релиза
+  #artifact: /.*\.zip/ # регулярное выражение, описывающее все артефакты данного релиза
+  artifact: installer, portable
   force_update: true  # перезаписывать артефакты, если файл с таким именем уже имеется
   draft: false
   prerelease: false
