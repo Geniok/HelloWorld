@@ -29,7 +29,7 @@ platform:
 #- path: HelloWorld.zip
 #  name: HelloWorld
 
-#after_build:
+after_build:
   - cmd: move %APPVEYOR_BUILD_FOLDER%\%PLATFORM%\Release\HelloWorld.exe %APPVEYOR_BUILD_FOLDER%\HelloWorld
   - cmd: 7z a HelloWorld.zip HelloWorld\HelloWorld.exe
 
