@@ -15,7 +15,7 @@ build:
   verbosity: minimal
 platform:
   - x64
-  - Win32
+  - x86
 
 
 #after_build:
