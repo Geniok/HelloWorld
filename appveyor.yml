@@ -28,7 +28,7 @@ artifacts:
       name: HelloWorld_%PLATFORM%
 
 artifacts: # push all files in directory
-  path: %APPVEYOR_BUILD_FOLDER%\%PLATFORM%\Release\*.exe
+  path: /*.zip
   name: installer
 
 deploy:
