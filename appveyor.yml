@@ -30,8 +30,8 @@ platform:
 #  name: HelloWorld
 
 after_build:
-  - cmd: move %APPVEYOR_BUILD_FOLDER%\%PLATFORM%\Release\HelloWorld.exe %APPVEYOR_BUILD_FOLDER%\HelloWorld
-  - cmd: 7z a HelloWorld_%PLATFORM%.zip HelloWorld\%PLATFORM%\HelloWorld.exe
+  #- cmd: move %APPVEYOR_BUILD_FOLDER%\%PLATFORM%\Release\HelloWorld.exe %APPVEYOR_BUILD_FOLDER%\\%PLATFORM%\HelloWorld
+  - cmd: 7z a HelloWorld_%PLATFORM%.zip %APPVEYOR_BUILD_FOLDER%\%PLATFORM%\Release\HelloWorld.exe
 
 #artifacts:
     # файлы-артефакты нужно предварительно явно указать в данной секции
