@@ -29,33 +29,19 @@ platform:
 #- path: HelloWorld.zip
 #  name: HelloWorld
 
-#after_build:
-#  - cmd: move %APPVEYOR_BUILD_FOLDER%\%PLATFORM%\Release\HelloWorld.exe %APPVEYOR_BUILD_FOLDER%\HelloWorld
-#  - cmd: 7z a HelloWorld.zip HelloWorld\HelloWorld.exe
+after_build:
+  - cmd: move %APPVEYOR_BUILD_FOLDER%\%PLATFORM%\Release\HelloWorld.exe %APPVEYOR_BUILD_FOLDER%\HelloWorld
+  - cmd: 7z a HelloWorld.zip HelloWorld\HelloWorld.exe
 
 #artifacts:
     # файлы-артефакты нужно предварительно явно указать в данной секции
     # в терминологии AppVeyor это называется "push artifacts"
 #    - path: HelloWorld\HelloWorld.exe
 
-#deploy:
-#    # выкладываем tagged-коммиты на GitHub Releases:
-#    description: '$(APPVEYOR_REPO_TAG_NAME)'
-#    provider: GitHub
-
-#    auth_token:
-#        secure: /j11FkWAb7Eqt5/aJAAV0JiviX97gHHBf9tUFSV9qQLfPD1amrfpGSDhcPngtkB5
-
-#    artifact: package_name
-#    force_update: true
-
-#    on:
-#        appveyor_repo_tag: true
-
 deploy:
   on:
     branch: master                 # релизы только из ветки master
-    APPVEYOR_REPO_TAG: true        # только если имеется прикрепленный tag
+    appveyor_repo_tag: true        # только если имеется прикрепленный tag
 
   provider: GitHub                         # выкладываем на GitHub Releases
   description: 'Bump version to $(APPVEYOR_REPO_TAG_NAME).$(APPVEYOR_BUILD_NUMBER)' # tag как имя релиза
