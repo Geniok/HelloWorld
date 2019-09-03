@@ -33,10 +33,11 @@ after_build:
   #- cmd: move %APPVEYOR_BUILD_FOLDER%\%PLATFORM%\Release\HelloWorld.exe %APPVEYOR_BUILD_FOLDER%\\%PLATFORM%\HelloWorld
   - cmd: 7z a HelloWorld_%PLATFORM%.zip %APPVEYOR_BUILD_FOLDER%\%PLATFORM%\Release\HelloWorld.exe
 
-#artifacts:
+artifacts:
     # файлы-артефакты нужно предварительно явно указать в данной секции
     # в терминологии AppVeyor это называется "push artifacts"
-#    - path: HelloWorld\HelloWorld.exe
+    - path: HelloWorld_%PLATFORM%.zip
+      name: HelloWorld_%PLATFORM%
 
 deploy:
   on:
