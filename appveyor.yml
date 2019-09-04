@@ -27,7 +27,7 @@ artifacts:
   name: HelloWorld
 
 deploy:
-  description: 'Version to $(APPVEYOR_REPO_TAG_NAME).$(APPVEYOR_BUILD_NUMBER)'  # tag и номер билда как имя релиза
+  description: 'v$(APPVEYOR_REPO_TAG_NAME).$(APPVEYOR_BUILD_NUMBER)'  # tag и номер билда как имя релиза
   provider: GitHub                                                              # выкладываем на GitHub Releases
   auth_token:
     secure: /j11FkWAb7Eqt5/aJAAV0JiviX97gHHBf9tUFSV9qQLfPD1amrfpGSDhcPngtkB5    # токен
