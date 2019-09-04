@@ -28,14 +28,14 @@ artifacts:
 
 deploy:
   on:
-    branch: appveyor               # релизы только из ветки appveyor
+    branch: master               # релизы только из ветки master
     appveyor_repo_tag: true        # только если имеется прикрепленный tag
 
   provider: GitHub                         # выкладываем на GitHub Releases
   description: 'Version to $(APPVEYOR_REPO_TAG_NAME).$(APPVEYOR_BUILD_NUMBER)' # tag как имя релиза
 
   auth_token:
-    secure: /j11FkWAb7Eqt5/aJAAV0JiviX97gHHBf9tUFSV9qQLfPD1amrfpGSDhcPngtkB5 # токен, зашифрованный на сайте appveyor.ci
+    secure: /j11FkWAb7Eqt5/aJAAV0JiviX97gHHBf9tUFSV9qQLfPD1amrfpGSDhcPngtkB5 # токен
 
   artifact: installer
   force_update: true  # перезаписывать артефакты, если файл с таким именем уже имеется
