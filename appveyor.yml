@@ -24,20 +24,19 @@ after_build:
 
 artifacts:
   path: /*.zip
-  name: installer
+  name: HelloWorld
 
 deploy:
-  on:
-    branch: master               # релизы только из ветки master
-    appveyor_repo_tag: true        # только если имеется прикрепленный tag
-
-  provider: GitHub                         # выкладываем на GitHub Releases
+  release: HelloWorld_v$(appveyor_build_version)
   description: 'Version to $(APPVEYOR_REPO_TAG_NAME).$(APPVEYOR_BUILD_NUMBER)' # tag как имя релиза
-
+  provider: GitHub                         # выкладываем на GitHub Releases
   auth_token:
     secure: /j11FkWAb7Eqt5/aJAAV0JiviX97gHHBf9tUFSV9qQLfPD1amrfpGSDhcPngtkB5 # токен
-
-  artifact: installer
+  artifact: HelloWorld
+  draft: false        # Отключаем черновой выпуск
+  prerelease: false   # Отключаем пометку предрелиз
   force_update: true  # перезаписывать артефакты, если файл с таким именем уже имеется
-  draft: false
-  prerelease: false
+
+  on:
+    branch: master                # релизы только из ветки master
+    appveyor_repo_tag: true       # только если имеется прикрепленный tag
