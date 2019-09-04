@@ -22,29 +22,22 @@ platform:
 after_build:
   - cmd: 7z a HelloWorld_%PLATFORM%.zip %APPVEYOR_BUILD_FOLDER%\%PLATFORM%\Release\HelloWorld.exe
 
-#artifacts:
-    # файлы-артефакты нужно предварительно явно указать в данной секции
-    # в терминологии AppVeyor это называется "push artifacts"
-#    - path: HelloWorld_%PLATFORM%.zip
-#      name: HelloWorld_%PLATFORM%
-
-artifacts: # push all files in directory
+artifacts:
   path: /*.zip
   name: installer
 
 deploy:
   on:
-    branch: appveyor               # релизы только из ветки master
+    branch: appveyor               # релизы только из ветки appveyor
     appveyor_repo_tag: true        # только если имеется прикрепленный tag
 
   provider: GitHub                         # выкладываем на GitHub Releases
-  description: 'Bump version to $(APPVEYOR_REPO_TAG_NAME).$(APPVEYOR_BUILD_NUMBER)' # tag как имя релиза
+  description: 'Version to $(APPVEYOR_REPO_TAG_NAME).$(APPVEYOR_BUILD_NUMBER)' # tag как имя релиза
 
   auth_token:
     secure: /j11FkWAb7Eqt5/aJAAV0JiviX97gHHBf9tUFSV9qQLfPD1amrfpGSDhcPngtkB5 # токен, зашифрованный на сайте appveyor.ci
 
-  #artifact: /.*\.zip/ # регулярное выражение, описывающее все артефакты данного релиза
-  artifact: installer, portable
+  artifact: installer
   force_update: true  # перезаписывать артефакты, если файл с таким именем уже имеется
   draft: false
   prerelease: false
