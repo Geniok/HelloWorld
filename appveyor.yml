@@ -4,7 +4,7 @@ branches:
   - master
   - appveyor
 #---------------------------------#
-#       build configuration       #
+#       Настройка билда           #
 #---------------------------------#
 image: Visual Studio 2019
 configuration: Release
@@ -17,7 +17,7 @@ platform:
   - x86
 
 #---------------------------------#
-#      artifacts configuration    #
+#      Настройка развертывания    #
 #---------------------------------#
 after_build:
   - cmd: 7z a HelloWorld_%PLATFORM%.zip %APPVEYOR_BUILD_FOLDER%\%PLATFORM%\Release\HelloWorld.exe
@@ -27,15 +27,14 @@ artifacts:
   name: HelloWorld
 
 deploy:
-  description: 'Version to $(APPVEYOR_REPO_TAG_NAME).$(APPVEYOR_BUILD_NUMBER)' # tag как имя релиза
-  provider: GitHub                         # выкладываем на GitHub Releases
+  description: 'Version to $(APPVEYOR_REPO_TAG_NAME).$(APPVEYOR_BUILD_NUMBER)'  # tag и номер билда как имя релиза
+  provider: GitHub                                                              # выкладываем на GitHub Releases
   auth_token:
-    secure: /j11FkWAb7Eqt5/aJAAV0JiviX97gHHBf9tUFSV9qQLfPD1amrfpGSDhcPngtkB5 # токен
+    secure: /j11FkWAb7Eqt5/aJAAV0JiviX97gHHBf9tUFSV9qQLfPD1amrfpGSDhcPngtkB5    # токен
   artifact: HelloWorld
-  draft: false        # Отключаем черновой выпуск
-  prerelease: false   # Отключаем пометку предрелиз
-  force_update: true  # перезаписывать артефакты, если файл с таким именем уже имеется
-
+  draft: false                                                                  # Отключаем черновой выпуск
+  prerelease: false                                                             # Отключаем пометку предрелиз
+  force_update: true                                                            # перезаписывать артефакты, если файл с таким именем уже имеется
   on:
-    branch: master                # релизы только из ветки master
-    appveyor_repo_tag: true       # только если имеется прикрепленный tag
+    branch: master                                                              # релизы только из ветки master
+    appveyor_repo_tag: true                                                     # только если имеется прикрепленный tag
